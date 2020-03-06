@@ -3,7 +3,7 @@
 # Either run the pysetup script, or add the following line to your ~/.bashrc manually.
 # alias pyv=". PATHTOFILE/pyv"
 
-venv_dir=".virtualenvs"
+venv_dir="$HOME/.virtualenvs"
 python_dir="$HOME/code/python"
 
 if [ $# -eq 1 ]
@@ -14,7 +14,7 @@ then
     cd $python_dir/$1
 else
     printf "Please select a Python environment to activate:\n"
-    select d in $HOME/$venv_dir/*; do test -n "$d" && break; echo ">>> Invalid Selection"; done
+    select d in $venv_dir/*; do test -n "$d" && break; echo ">>> Invalid Selection"; done
     source $d"/bin/activate" 
     env_name="${d##*/}"
     mkdir -p $python_dir/$env_name
