@@ -8,8 +8,8 @@ python_dir="$HOME/code/python"
 
 if [ $# -eq 1 ]
 then
-    python3 -m venv "$HOME/$venv_dir/$1"
-    source "$HOME/$venv_dir/$1/bin/activate"
+    python3 -m venv "$venv_dir/$1"
+    source "$venv_dir/$1/bin/activate"
     mkdir -p $python_dir/$1
     cd $python_dir/$1
 else
